@@ -6,11 +6,13 @@ import com.ms.evento.aplication.core.domain.Evento;
 import com.ms.evento.aplication.ports.in.BuscarEventoIdServicePort;
 import com.ms.evento.aplication.ports.in.ExibirEventoServicePort;
 import com.ms.evento.aplication.ports.in.SalvarEventoServicePort;
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/eventos")
 @RequiredArgsConstructor
+@Validated
 public class EventoController {
 
     private final SalvarEventoServicePort salvarEventoServicePort;
@@ -30,7 +33,7 @@ public class EventoController {
     private final ModelMapper modelMapper;
 
     @PostMapping
-    public ResponseEntity salvarEvento(@RequestBody EventoRequest eventoRequest){
+    public ResponseEntity salvarEvento(@RequestBody @Valid EventoRequest eventoRequest){
         var evento = modelMapper.map(eventoRequest, Evento.class);
         salvarEventoServicePort.salvarEvento(evento);
         return ResponseEntity.ok(evento);

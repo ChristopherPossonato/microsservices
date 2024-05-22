@@ -1,6 +1,7 @@
 package com.ms.pedido.model;
 
 import jakarta.persistence.Embeddable;
+import java.math.BigDecimal;
 
 @Embeddable
 public record Evento(
@@ -8,7 +9,8 @@ public record Evento(
     String atracao,
     String local,
     String dataEvento,
-    String descricao
+    String descricao,
+    BigDecimal valorIngresso
 ) {
 
 }

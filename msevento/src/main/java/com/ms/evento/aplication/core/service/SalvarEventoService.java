@@ -13,6 +13,7 @@ public class SalvarEventoService implements SalvarEventoServicePort {
 
     @Override
     public Evento salvarEvento(Evento evento) {
+
         evento.setEventoRealizado(false);
         return salvarEventoPort.salvar(evento);
     }

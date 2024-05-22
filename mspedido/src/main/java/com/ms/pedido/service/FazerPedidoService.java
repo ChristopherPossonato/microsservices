@@ -11,7 +11,5 @@ public interface FazerPedidoService {
 
   @GetMapping("/{id}")
   Evento pegarEvento(@PathVariable("id") Long id);
-  @GetMapping
-  List<Evento> exibirEventos();
 
 }

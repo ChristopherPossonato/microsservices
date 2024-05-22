@@ -1,6 +1,7 @@
 package com.ms.evento.aplication.core.service;
 
 import com.ms.evento.aplication.core.domain.Evento;
+import com.ms.evento.aplication.core.exception.validacao.EventNotFoundException;
 import com.ms.evento.aplication.ports.in.BuscarEventoIdServicePort;
 import com.ms.evento.aplication.ports.out.BuscarEventoIdport;
 

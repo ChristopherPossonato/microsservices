@@ -21,7 +21,7 @@ public class ExibirEventosAdapter implements ExibirEventosPort {
 
 
 
-    return listaEventosEntity.stream().filter(event -> event.getEventoRealizado() != true)
+    return listaEventosEntity.stream().filter(event -> event.getEventoRealizado() == false)
         .map(e -> modelMapper
             .map(e, Evento.class))
         .collect(Collectors.toList());

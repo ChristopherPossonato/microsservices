@@ -1,5 +1,6 @@
 package com.ms.evento.adapters.outbound.response;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,5 +14,6 @@ public class EventoResponse {
   private String local;
   private LocalDate dataEvento;
   private String descricao;
+  private BigDecimal valorIngresso;
 
 }

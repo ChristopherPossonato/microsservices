@@ -1,6 +1,6 @@
 package com.ms.pedido.controller;
 
-import com.ms.pedido.model.DadosCliente;
+import com.ms.pedido.model.Pedido;
 import com.ms.pedido.service.PedidoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +16,12 @@ public class PedidoController {
 
   private final PedidoService pedidoService;
 
+
   @PostMapping
-  public ResponseEntity realizarPedido(@RequestBody DadosCliente dadosCliente) {
-    return ResponseEntity.ok(pedidoService.realizarPedido(dadosCliente));
+  public ResponseEntity realizarPedido(@RequestBody Pedido pedido) {
+
+    return ResponseEntity.ok(pedidoService.realizarPedido(pedido));
   }
+
+
 }

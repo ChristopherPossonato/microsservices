@@ -1,5 +1,6 @@
 package com.ms.evento.aplication.core.domain;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Evento {
@@ -11,6 +12,15 @@ public class Evento {
   private Integer quantidadeIngresso;
   private String descricao;
   private Boolean eventoRealizado;
+  private BigDecimal valorIngresso;
+
+  public BigDecimal getValorIngresso() {
+    return valorIngresso;
+  }
+
+  public void setValorIngresso(BigDecimal valorIngresso) {
+    this.valorIngresso = valorIngresso;
+  }
 
   public Long getId() {
     return id;
